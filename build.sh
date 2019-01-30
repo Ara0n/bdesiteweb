@@ -3,5 +3,7 @@ for i in "src/pages/"*; do
 	cat src/template/head.html | sed s/__ID_PAGE__/`echo $n | cut -d '.' -f 1` > /var/www/bde-infossible.tk/html/$n
 	cat $i src/template/foot.html >> /var/www/bde-infossible.tk/html/$n
 done
+mkdir -P /var/www/bde-infossible.tk/html/assets
 cp src/assets/* /var/www/bde-infossible.tk/html/assets
+mkdir -P /var/www/bde-infossible.tk/html/res
 lessc src/styles/styles.less /var/www/bde-infossible.tk/html/res/styles.css
