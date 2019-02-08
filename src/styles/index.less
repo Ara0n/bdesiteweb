@@ -4,6 +4,22 @@ flex-direction: column;
 color: @blanc;
 padding: 20px;	
 
+[data-hover] {
+    position: relative;
+}
+[data-hover]::after {
+    content: attr(data-hover);
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    color: #ff8c00;
+    border-radius: 2px;
+}
+[data-hover]:hover::after {
+    display: block;
+}
+
 figure {
 	display: flex;
 	flex-direction: column;
@@ -24,7 +40,6 @@ section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	//background-color: green;
 
 	h2 {
 		color: black;
@@ -36,10 +51,8 @@ section {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
-		//background-color: greenyellow;
 
 		figure {
-			//background-color: yellow;
 		}
 	}
 }
