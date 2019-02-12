@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# cli options
+outfile=$1
+infile=$2
+
+# get page name
+name=`basename -s .html $infile`
+name=`basename -s .php $name`
+
+# write page header
+cat src/template/head.html | sed s/__ID_PAGE__/$name/g > $outfile
+cat $infile src/template/foot.html >> $outfile
