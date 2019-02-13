@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<title>Mission:Info'ssible</title>
-	<link rel="stylesheet" type="text/css" href="res/styles.css" />
-	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-</head>
-<body>
-<header>
-	<h1><a href="index.html">Mission INFO'ssible</a></h1>
-	<nav>
-		<ul>
-			<li><a href="profession.html">Profession de foi(e)</a></li>
-			<li><a href="edt.html">Calendrier des évenements</a></li>
-			<li><a href="membres.html">Liste des membres</a></li>
-			<li><a href="boiteaclou.php">Boite questions/idées</a></li>
-		</ul>
-	</nav>
-</header>
+<?php
+$nom=$_POST['nom'];
+$idee=$_POST['idee'];
 
-<main id="boiteaclou">
-</main>
+if($nom!='' && $idee!='') {
+	$str=file_get_contents("boiteaclou.json");
+	$arr=json_decode($str);
+	$arr[]=[nom => $nom, idee => $idee];
+	$str=json_encode($arr);
+	file_put_contents("boiteaclou.json", $str);
+	?>
+	<span class="succes">Message envoyé avec succès!</span>
+	<?php
+}
+?>
 
-<footer>
-	To be determined
-</footer>
-</body>
-</html>
+<h2>Boite questions/idées</h2>
+<form action="boiteaclou.php" method="POST">
+	<label for="nom">Nom</label>
+	<input type="text" name="nom" id="nom" />
+	<label for="idee">Idée</label>
+	<textarea name="idee" id="idee"></textarea>
+	<input type="submit" value="Envoyer" />
+</form>
