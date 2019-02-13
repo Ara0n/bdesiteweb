@@ -83,3 +83,20 @@ footer {
 		font-size: 3rem;
 	}
 }
+
+// fix page not being at least 100% tall
+html, body {
+	height: 100%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	
+	header, main, body {
+		flex-shrink: 0;
+	}
+	
+	main {
+		flex-grow: 1;
+	}
+}
