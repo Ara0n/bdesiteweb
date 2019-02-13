@@ -1,0 +1,61 @@
+section {
+	display: flex;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 2rem;
+	box-sizing: border-box;
+	flex-direction: column;
+	align-items: center;
+	
+	h2 {
+		font-size: 3.5rem;
+		color: @rouge;
+	}
+	
+	div {
+		display: flex;
+		flex-flow: row wrap;
+		align-content: center;
+		justify-content: center;
+		
+		figure {
+			position: relative;
+			
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			
+			img {
+				max-width: 300px;
+			}
+			
+			figcaption {
+				display: flex;
+				flex-direction: column-reverse;
+				
+				width: 100%;
+				height: 100px;
+				position: absolute;
+				bottom: 0;
+				
+				box-shadow: @blanc 0px -50px 50px -20px inset;
+				transition: box-shadow .5s;
+				
+				&:hover {
+					box-shadow: @blanc 0px -70px 50px -20px inset;
+				}
+				
+				span {
+					text-align: center;
+				}
+				
+				.role {
+					color: @rouge;
+				}
+				.nom {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
