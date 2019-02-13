@@ -16,8 +16,10 @@ if($nom!='' && $idee!='') {
 
 <h2>Boite questions/idées</h2>
 <form action="boiteaclou.php" method="POST">
-	<label for="nom">Nom</label>
-	<input type="text" name="nom" id="nom" />
+	<span>
+		<label for="nom">Nom</label>
+		<input type="text" name="nom" id="nom" />
+	</span>
 	<label for="idee">Idée</label>
 	<textarea name="idee" id="idee"></textarea>
 	<input type="submit" value="Envoyer" />
