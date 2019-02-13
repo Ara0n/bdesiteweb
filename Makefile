@@ -13,7 +13,7 @@ PAGEC := ./pagec
 CONVERT := convert
 
 # file list
-PAGES = boiteaclou.php index.html membres.html edt.html
+PAGES = boiteaclou.php index.html membres.html edt.html profession.html
 IMAGESMEMBERS = alexis.jpg alyssia.jpg clement.jpg daniel.jpg enora.jpg evan.jpg hugo.jpg killian.jpg mathis.jpg nicolas.jpg oceane.jpg thibault.jpg thomas.jpg
 IMAGESGROUPS = all.jpg bre.jpg pole_com.jpg pole_event.jpg pole_kfet.jpg
 ASSETS = IMPOS0__.ttf
